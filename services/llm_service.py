@@ -34,4 +34,3 @@ def score_goal_progress(user_input):
     )
     response = co.chat(model='command-r-plus',message=prompt)
     return response.text
-

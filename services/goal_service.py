@@ -2,7 +2,7 @@ import json
 import os
 import uuid
 
-GOAL_FILE=r'E:\TherapyAI\data\user_goal.json'
+GOAL_FILE = os.path.join("data", "user_goal.json")
 
 def load_goals():
     if os.path.exists(GOAL_FILE):
