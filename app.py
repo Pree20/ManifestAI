@@ -1,6 +1,6 @@
 from flask import Flask
-from routes.chat import chat_bp
-from routes.goals import goals_bp
+from routes.chat_api import chat_bp
+from routes.goals_api import goals_bp
 
 app = Flask(__name__)
 app.register_blueprint(chat_bp)
