@@ -33,7 +33,7 @@ markdown-it-py==3.0.0
 MarkupSafe==3.0.2
 mdurl==0.1.2
 narwhals==1.42.1
-numpy==2.0.2
+numpy==1.26.4
 packaging==25.0
 pandas==2.3.0
 pillow==11.2.1
@@ -47,7 +47,6 @@ Pympler==1.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
 pytz==2025.2
-pywin32==310
 PyYAML==6.0.2
 referencing==0.36.2
 requests==2.32.4
