@@ -1,0 +1,25 @@
+[
+  {
+    "id": "d5a7cac7-3cb7-4a5d-b660-06b0a075954f",
+    "text": "do yoga everyday",
+    "reflections": [
+      "I am not able to do it. I am working out, but not doing yoga.",
+      "I am not able to do it everyday. I am working out, but not doing yoga :/\n"
+    ]
+  },
+  {
+    "id": "2e487675-ae6f-415c-8ffb-0a923925bf28",
+    "text": "Learn about ML everyday",
+    "reflections": [
+      "I am currently building a project which calls a Cohere API key, I am not sure if thats necessarily considered as ML. But I guess its something. I'd definitely like to integrate more ML features into it like building a recommendation system and maybe image generation"
+    ]
+  },
+  {
+    "id": "96d57f67-2cdf-44cb-a14e-1760844e6753",
+    "text": "Meditate",
+    "reflections": [
+      "I meditated for 5 minutes today",
+      "I meditated for 5 minutes today"
+    ]
+  }
+]
