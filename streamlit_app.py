@@ -64,6 +64,7 @@ else:
 
 st.session_state["page"] = page
 
+
 # ---------- Session State Init ----------
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
@@ -76,6 +77,7 @@ if not st.session_state.chat_history:
     st.session_state.chat_history.append(
         ("ai", "Hi there! Let's take a moment to check in. How are you feeling today?")
     )
+
 
 # ---------- Modular Functions ----------
 
@@ -93,7 +95,7 @@ def show_input_form():
         submitted = st.form_submit_button("Send")
         if submitted and user_input:
             st.session_state.chat_history.append(("user", user_input))
-            res = requests.post(f"{API_BASE}/chat", json={"message": user_input})
+            res = requests.post(f"{API_BASE}/chat", json={"message": user_input,"history": st.session_state.chat_history})
             ai_msg = res.json()["response"]
             st.session_state.chat_history.append(("ai", ai_msg))
             st.session_state.show_input = False

@@ -1,10 +1,13 @@
 from flask import Blueprint, request, jsonify
-from services.llm_service import continue_chat
+from services.llm_service import continue_chat,format_history_for_prompt
 
 chat_bp = Blueprint('chat', __name__)
 
 @chat_bp.route("/chat", methods=["POST"])
 def chat():
-    user_input = request.json.get("message")
-    response = continue_chat(user_input)
+    data=request.json
+    user_input = data.get("message")
+    history = data.get("history", [])
+    history_text = format_history_for_prompt(history)
+    response = continue_chat(history_text,user_input)
     return jsonify({"response": response})

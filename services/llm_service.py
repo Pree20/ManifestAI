@@ -5,9 +5,16 @@ from dotenv import load_dotenv
 load_dotenv()
 co = cohere.Client(os.getenv('COHERE_API_KEY'))
 
-def continue_chat(user_input):
+def format_history_for_prompt(history):
+    context = ""
+    for speaker, message in history:
+        prefix = "User:" if speaker == "user" else "AI:"
+        context += f"{prefix} {message}\n"
+    return context
+
+def continue_chat(history_text, user_input):
     prompt = (
-        f"the user said:{user_input}"
+        f"so far the user has said this{history_text}, and now the user said:{user_input}"
         "As a compassionate, emotionally intelligent AI therapist, your response should have two parts:\n"
         "1. A warm, validating reflection that shows understanding and support.\n"
         "2. A gentle follow-up question that invites the user to explore their feelings or situation more deeply.\n\n"
