@@ -14,6 +14,10 @@ def create_user_in_db(username, password):
         cursor.execute("SELECT CURRENT_DATABASE(), CURRENT_SCHEMA()")
         print("📍 Connected to:", cursor.fetchone())
         #user_id = str(uuid.uuid4())
+        cursor.execute("SELECT COUNT(*) FROM user_info WHERE user_name = %s", (username,))
+        if cursor.fetchone()[0] > 0:
+            print("❌ Username already exists!")
+            return False
         hashed_pw = hash_password(password)
         print(username,password,hashed_pw)
         cursor.execute(
