@@ -1,3 +1,6 @@
+Medium Article (Project Journey): https://pv20012000.medium.com/manifestai-a-productivity-tool-that-keeps-you-accountable-b505f221e106
+Watch Video Here: https://youtu.be/5UZXnkGGyNQ
+
 # ManifestAI  
 _A productivity tool that keeps you accountable through AI-powered check-ins, goal tracking, and progress monitoring._
 
@@ -27,37 +30,3 @@ The tool ensures accountability by integrating **daily check-ins, actionable goa
 - **Database:** Snowflake
 - **AI Integration:** Cohere API
 - **Testing:** Postman
-
----
-
-ManifestAI/
-│
-├── app.py # Flask application entry point
-├── streamlit_app.py # Streamlit frontend entry point
-├── requirements.txt # Project dependencies
-├── .env # Environment variables (not committed)
-├── .gitignore # Git ignore file
-│
-├── data/ # Temporary JSON storage (before DB integration)
-│ ├── users.json
-│ └── user_goal.json
-│
-├── routes/ # API endpoints & UI routes
-│ ├── auth_ui.py # Login/Signup UI
-│ ├── chat_api.py # Chat-related API endpoints
-│ ├── chat_ui.py # Chat UI
-│ ├── goals_api.py # Goals-related API endpoints
-│ └── goals_ui.py # Goals UI
-│
-├── services/ # Business logic & database integration
-│ ├── chat_logger.py # Logs chat conversations
-│ ├── goal_service.py # Handles goal creation & management
-│ ├── llm_service.py # Cohere API integration for AI feedback
-│ ├── snowflake_db.py # Snowflake database connection & queries
-│ └── user_service.py # User authentication & management
-│
-└── README.md # Project documentation
-
-
-Medium Article (Project Journey): https://pv20012000.medium.com/manifestai-a-productivity-tool-that-keeps-you-accountable-b505f221e106
-Watch Video Here: https://youtu.be/5UZXnkGGyNQ
