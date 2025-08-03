@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from services.llm_service import continue_chat,format_history_for_prompt
-from services.chat_logger import log_chat_to_db
+from services.chat_logger import log_chat_to_db, get_next_conversation_id
 
 chat_bp = Blueprint('chat', __name__)
 
@@ -14,10 +14,11 @@ def chat():
         history = data.get("history", "")
         history_text = format_history_for_prompt(history)
         response = continue_chat(history_text,message)
-
-        log_chat_to_db(user_id, user_name, ai_question=response, user_response=message)
+        conversation_id = data.get("conversation_id","")
+        log_chat_to_db(user_id, user_name,conversation_id, ai_question=response, user_response=message)
         
         return jsonify({"response": response})
     except Exception as e:
         print("Error in /chat:", e)
         return jsonify({"error": str(e)}), 500
+

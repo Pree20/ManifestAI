@@ -1,6 +1,6 @@
 import streamlit as st
-from services.goal_service import load_goals, add_goal, get_goal_by_id, add_reflection
-from services.llm_service import score_goal_progress
+from services.goal_service import load_goals, add_goal, get_goal_by_id, add_reflection, save_goal_steps
+from services.llm_service import score_goal_progress, generate_steps_for_goal
 from routes.chat_ui import show_daily_reflection_page
 from routes.goals_ui import show_goals_page, show_goal_detail_page
 from routes.auth_ui import show_login_page
@@ -24,6 +24,11 @@ if "username" not in st.session_state:
 st.sidebar.title("🧭 Navigate")
 if st.session_state.logged_in:
     st.sidebar.write(f"👋 Logged in as **{st.session_state.username}**")
+
+    if "conversation_id" not in st.session_state:
+        import uuid
+        st.session_state.conversation_id = str(uuid.uuid4())
+
     if st.sidebar.button("Logout"):
         st.session_state.logged_in = False
         st.session_state.username = ""

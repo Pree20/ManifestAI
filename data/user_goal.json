@@ -21,5 +21,26 @@
       "I meditated for 5 minutes today",
       "I meditated for 5 minutes today"
     ]
+  },
+  {
+    "id": "c93654d1-980b-437a-a696-3ca6a58aee32",
+    "text": "work on project everyday",
+    "reflections": [
+      "i am working on it twice a week"
+    ]
+  },
+  {
+    "id": "a8ddc5a2-fe9f-49c8-8ef8-fd634a8aa470",
+    "text": "journal everyday",
+    "reflections": [
+      "I journalled twice this week"
+    ]
+  },
+  {
+    "id": "0ccb1c4d-a5b3-45e8-bab0-3c2ca11e5030",
+    "text": "talk to parents everyday",
+    "reflections": [
+      "i am talking to them everyday"
+    ]
   }
 ]
